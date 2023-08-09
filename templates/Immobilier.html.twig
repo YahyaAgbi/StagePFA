@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Vetements</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				background-color: #f0f0f0;
+				background-image: url('/img/vc.jpg');
+				margin: 0;
+				padding: 0;
+				justify-content: center;
+			}
+
+			h2 {
+				color: #333;
+			}
+
+			form {
+				max-width: 600px;
+				margin: 0 auto;
+				padding: 30px;
+				background-color: grey;
+				border: 1px solid #ccc;
+				border-radius: 5px;
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				opacity: 0.8;
+			}
+
+			.column {
+				flex-basis: 46%;
+			}
+			select {
+				background-color: grey;
+				border: 10 px;
+
+
+			}
+
+			label {
+				display: block;
+				margin-bottom: 8px;
+				color: #555;
+			}
+
+			input[type="text"],
+			input[type="email"],
+			textarea {
+				width: 100%;
+				padding: 8px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				margin-bottom: 16px;
+			}
+
+			textarea {
+				resize: vertical;
+			}
+
+			input[type="submit"] {
+				background-color: #4CAF50;
+				color: #fff;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 4px;
+				cursor: pointer;
+				margin-right: 80%;
+			}
+
+			input[type="submit"]:hover {
+				background-color: #white;
+			}
+			.Envoyer {
+				right: 80%;
+
+			}
+			.tit {
+				font-weight: bold;
+				font-style: italic;
+				color: white;
+			}
+			#dat {
+				width: 105%;
+				height: 6%;
+
+			}
+			#photos {
+				width: 105%;
+				height: 6%;
+			}
+		</style>
+
+	</head>
+	<body>
+		<br>
+		<h2>
+			<center class="tit">
+				Vêtements</center>
+		</h2>
+		<form action="{{ path('app_immobilier') }}" method="POST" id="form">
+
+			<div class="column">
+				<label for="titre" style="color:white;">Titre :</label>
+				<input type="text" id="titre" name="titre" required placeholder="entrer le titre de l'annonce">
+
+
+				<label for="message" style="color:white;">Texte  :</label>
+				<textarea id="message" name="message" required placeholder="decrire l'annonce"></textarea>
+
+				<label for="type" style="color:white;">type :</label>
+				<input type="text" id="type" name="titre" required placeholder="entrer le type de vetement">
+
+				<label for="type" style="color:white;">prix :</label>
+				<input type="text" id="prix" name="titre" required placeholder="entrer le prix">
+
+				<label for="Nom" style="color:white;">Nom :</label>
+				<input type="text" id="titre" name="titre" required placeholder="saisir le nom">
+
+
+			</div>
+			<div class="column">
+
+				<label for="Email" style="color:white;">Email :</label>
+				<input type="text" id="titre" name="titre" required placeholder="saisir votre adresse e-mail">
+
+				<label for="tel" style="color:white;">Tel :</label>
+				<input type="text" id="titre" name="titre" required placeholder="saisir votre  num tel">
+				<br>
+				<br>
+				<label for="date" style="color:white;">Date d'annonce :</label>
+				<input type="date" id="dat" name="titre" required>
+				<title>Photo Upload</title>
+				<br>
+				<label for="photo" style="color:white;">Select a photo:</label>
+				<br>
+				<input type="file" id="photos" name="photo" accept="image/*">
+				<br>
+				<br>
+				<input type="submit" value="Upload" id="Z">
+				<br><br>
+				<input type="submit" value="Afficher l'annonce" id="Z">
+				<br>
+				<br>
+
+
+			</form>
+		</body>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+{# templates/login/index.html.twig #}
+
+
+{# ... #}
+	<style>
+/* styles for the login form */
+
+/* Center the form vertically and horizontally */
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+}
+
+/* Add some space between the form elements */
+label,
+input,
+button {
+	margin-bottom: 10px;
+}
+
+/* Style the input fields and buttons */
+input[type="text"],
+input[type="password"],
+button {
+	padding: 8px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	width: 250px;
+}
+
+/* Style the submit button */
+button[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	cursor: pointer;
+}
+
+/* Add hover effect to the submit button */
+button[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+/* Style the error message */
+div {
+	color: red;
+	margin-bottom: 10px;
+}
+
+</style>
+
+	{% block body %}
+		{% if error %}
+			<div>
+		{{ error.messageKey|trans(error.messageData, 'security') }}
+	</div>
+	{% endif %}
+
+		<form action="{{ path('app_login') }}" method="post"> <label for="username">Email:</label>
+		<input type="text" id="username" name="_username" value="{{ last_username }}">
+
+		<label for="password">Password:</label>
+		<input type="password" id="password" name="_password">
+
+		<button type="submit">login</button>
+	</form>
+{% endblock %}

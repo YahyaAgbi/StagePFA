@@ -1,3 +1,12 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+  path: /
+  controller: App\Controller\TaskCntroller::index
+admin_user_edit:
+  path: /admin/users/{id}/edit
+  controller: App\Controller\AdminController::edit
+  methods: ["GET", "POST"]
+
+admin_user_delete:
+  path: /admin/users/{id}/delete
+  controller: App\Controller\AdminController::delete
+  methods: ["POST"]
